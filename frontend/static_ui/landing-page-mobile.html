@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rakshak Landing Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007a6c",
+                        "primary-dark": "#005f54",
+                        "background-light": "#F6F7FB",
+                        "background-dark": "#0f2321",
+                        "text-main": "#0F172A",
+                        "text-muted": "#6B7280",
+                        "urgent-red": "#E53935",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", 
+                        "lg": "12px", 
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'glow-teal': '0 0 0 4px rgba(0, 150, 136, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .ios-safe-area-top {
+            padding-top: max(20px, env(safe-area-inset-top));
+        }
+        .ios-safe-area-bottom {
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+        }
+        /* Custom pattern for the subtle line art */
+        .bg-pattern {
+            background-image: radial-gradient(#007a6c 0.5px, transparent 0.5px), radial-gradient(#007a6c 0.5px, #F6F7FB 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased h-screen w-full overflow-hidden flex flex-col relative">
+<!-- Subtle Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<!-- Abstract gradient blob top left -->
+<div class="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-3xl"></div>
+<!-- Faint line-art help illustration placeholder (abstract geometric shapes) -->
+<div class="absolute top-1/2 -translate-y-1/2 right-[-50px] w-[300px] h-[300px] opacity-[0.28] pointer-events-none" data-alt="Abstract faint line art illustration representing help and connection" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbXRQoSW0P3MG4qKbQQMPCcUXTuYS9paTHz3TopnBd1kKYze43jrKnNE-nJo75JBcKZz8qDhwXVbea7w8GFEibL4zcaYQysL_sLdHZTTPVYHRA6N5s2Of8SfBOYt7FJSOuSOn-7E-uPSplkKKM13M18pacD05nMMFkYihCbLS9PiPe7cgcYb_Kr2El3GYY5aBRP8DjccFzbDbDbFW1jUo-lU5RzZyyjl4rTf9YFeH5_iCZiAvpn48wCuOeWeAcoi6U91yQAKp7-5N8'); mask-image: linear-gradient(to left, black, transparent);">
+<!-- Using an SVG pattern to mimic the line art request -->
+<svg class="w-full h-full text-primary fill-none stroke-current stroke-[0.5]" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="100" r="80"></circle>
+<path d="M100 20 L100 180 M20 100 L180 100"></path>
+<circle cx="100" cy="100" r="40"></circle>
+<path d="M70 70 L130 130 M130 70 L70 130"></path>
+</svg>
+</div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex flex-col h-full ios-safe-area-top ios-safe-area-bottom px-5 pt-8 pb-4 justify-between">
+<!-- Top Section: Brand & Tagline -->
+<div class="flex flex-col items-center w-full mt-8">
+<!-- Logo Container -->
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-subtle ring-2 ring-[#009688]/20 mb-6">
+<span class="material-symbols-outlined text-[#009688] text-[32px]">shield_person</span>
+</div>
+<!-- Headline -->
+<h1 class="text-text-main text-[20px] font-bold leading-tight text-center max-w-[280px]">
+                You’re never alone in critical moments.
+            </h1>
+</div>
+<!-- Middle Spacer (pushes top up and bottom down) -->
+<div class="flex-grow"></div>
+<!-- Bottom Section: Actions & Footer -->
+<div class="flex flex-col w-full gap-4">
+<!-- Primary Action Stack -->
+<div class="flex flex-col gap-4 w-full">
+<!-- Sign Up Button -->
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-[52px] px-5 bg-primary hover:bg-primary-dark transition-colors text-white text-base font-bold tracking-[0.015em] shadow-lg shadow-primary/20">
+                    Sign Up
+                </button>
+<!-- Login Button -->
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-[52px] px-5 bg-transparent border border-[#E6E9EF] hover:bg-gray-50 transition-colors text-text-main text-base font-bold tracking-[0.015em]">
+                    Login
+                </button>
+</div>
+<!-- Guest Mode / SOS Section -->
+<div class="flex flex-col items-center mt-4">
+<button class="group relative flex items-center justify-center w-14 h-14 rounded-full bg-urgent-red text-white shadow-lg shadow-urgent-red/30 hover:scale-105 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-[28px]">sos</span>
+<!-- Ripple effect hint -->
+<span class="absolute inset-0 rounded-full animate-ping bg-urgent-red opacity-20"></span>
+</button>
+<span class="text-text-muted text-sm font-medium mt-3">Guest Mode (SOS only)</span>
+</div>
+<!-- Footer Legal -->
+<div class="mt-4 text-center">
+<p class="text-[11px] text-text-muted/60 leading-relaxed">
+                    By continuing, you agree to <a class="underline hover:text-primary" href="#">Terms</a> &amp; <a class="underline hover:text-primary" href="#">Privacy</a>
+</p>
+</div>
+</div>
+</div>
+</body></html>
